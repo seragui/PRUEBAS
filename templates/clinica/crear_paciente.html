@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'css/estilos.css' %}">
+</head>
+<body>
+
+    
+
+    <header>
+        <div class="contenedor">
+
+            <div class="menu">
+                <div class="Lmenu">
+                    <nav>
+                        <ul>
+                            <li><a href="index.html">Menu Principal</a></li>
+                            <li><a href="#">Expediente</a></li>
+                            <li><a href="#">Consulta</a></li>
+                            <li><a href="#">Reportes</a></li>
+                            <li><a href="#">Citas</a></li>
+                        </ul>
+                    </nav>
+                </div>
+                <div class="sesion">
+                    <img src="{% static 'img/imagen1.png' %}" alt="Mi imagen" width="50" height="75">
+                    <ul>
+                        <li><button>editar perfil</button></li>
+                        <li><button>cerrar sesion</button></li>
+                    </ul>
+                </div>
+                
+                
+            </div>
+        </div>
+
+    </header>
+
+    <hr>
+
+    <h1 id="Ingreso">Ingresar los datos del Paciente</h1>
+    <form action="" method="post">
+        {% csrf_token %}
+          {{paciente_form.as_p}}
+          <button type="submit">Crear</button>
+    </form>
+
+    <footer>
+        <h1><CEnter>°SISMEDICA°</CEnter></h1>
+    </footer>
+  
+
+</body>
+</html>

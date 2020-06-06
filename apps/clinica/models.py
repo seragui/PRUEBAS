@@ -11,15 +11,15 @@ class Paciente(models.Model):
     dui = models.CharField('DUI', max_length=10, blank=False,null=False)
     sexo = models.CharField('Sexo', max_length=1, blank=False, null=False)
     email = models.CharField('email',max_length=100,blank=False, null=False)
-    estadoCivil = models.CharField('estadoCivil', max_length=6, blank=False,null=False)
-    telefono = models.IntegerField('Telefono', blank=False,null=False)
+    estadoCivil = models.CharField('estadoCivil', max_length=10, blank=False,null=False)
+    telefono = models.CharField('Telefono', max_length=9, blank=False,null=False)
     fechaNaci = models.DateField('Fecha de Nacimiento',blank=False,null=False)
     direccion = models.TextField('Direccion',max_length=300, blank=False,null=False)
     departamento = models.CharField('Departamento',max_length=100,blank=False,null=False)
     municipio = models.CharField('Municipio',max_length=100,blank=False,null=False)
-    altura = models.IntegerField('Altura',blank=False,null=False)
-    peso = models.IntegerField('Peso', blank=False,null=False)
-
+    altura = models.FloatField('Altura',blank=False,null=False)
+    peso = models.FloatField('Peso', blank=False,null=False)
+    
     class Meta:
             verbose_name = 'Paciente'
             verbose_name_plural = 'Pacientes'

@@ -7,6 +7,7 @@
     <title>{% block titulo %}Pagina de Inicio de Sismedica{% endblock titulo %}</title>
     {% block extracss %}
     <link rel="stylesheet" href="{% static 'css/estilos.css' %}">
+    <link rel="stylesheet" href="{% static 'css/estilos3.css' %}">
     {% endblock extracss %}
 </head>
 <body>
@@ -18,21 +19,33 @@
 
             <div class="menu">
                 <div class="Lmenu">
-                    <nav>
-                        <ul>
+                    <nav class="navegacion">
+                        <ul class="ulmenu">
                             <li><a href="index.html">Menu Principal</a></li>
-                            <li><a href="#">Expediente</a></li>
-                            <li><a href="#">Consulta</a></li>
+                            <li><a href="#">Expediente</a>
+                                <ul class="submenu">
+                                    <li><a href="{% url 'clinica:crear_paciente' %}">Crear Paciente Nuevo</a> </li>
+                                    <li><a href="#">Editar Paciente</a></li>
+                                    <li><a href="#">Consultar Paciente</a></li>
+                                </ul>
+                            </li>    
+                            <li><a href="#">Consulta</a>
+                                <ul class="submenu">
+                                    <li><a href="#">Crear Consulta</a> </li>
+                                    <li><a href="#">Gestionar Paciente</a></li>
+                                </ul>
+                            </li>
                             <li><a href="#">Reportes</a></li>
                             <li><a href="#">Citas</a></li>
                         </ul>
                     </nav>
                 </div>
                 <div class="sesion">
-                    <img src="{% static 'img/imagen1.png' %}" alt="Mi imagen" width="50" height="75">
+                    <img src="{% static 'img/imagen1.png' %}" alt="Mi imagen" width="75" height="100">
                     <ul>
+                        <li>{{user.username | upper}}</li>
                         <li><button>editar perfil</button></li>
-                        <li><button>cerrar sesion</button></li>
+                        <li><a class="nav-link" href="{% url 'logout' %}">Cerrar Sesion</a></li>
                     </ul>
                 </div>
                 

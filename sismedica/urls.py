@@ -16,9 +16,13 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path,include
 from apps.clinica.views import Home
+from django.conf.urls import url, include
+from django.contrib.auth.views import LoginView,LogoutView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('clinica/',include(('apps.clinica.urls','clinica'))),
     path('home/',Home, name = 'index'),
+    path('', LoginView.as_view(template_name='login.html'), name="login"),
+    path('logout/',LogoutView.as_view(next_page='login'),name='logout')
 ]

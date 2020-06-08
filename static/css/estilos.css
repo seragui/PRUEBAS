@@ -118,19 +118,5 @@ li{
     text-decoration:none;
 }
 
-form{
-    margin: 0 auto;
-    width: 600px;
-    height: 615px;
-    background-color:whitesmoke;
-    padding: 15px;
-    color: #999;
-    border-radius: 10px;
-    column-count: 2;
-    width: 900px;
-    
-}
 
-input, textarea{
-    width: 280px;
-}
+

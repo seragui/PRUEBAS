@@ -12,6 +12,7 @@
 .ulmenu > li{
     position: relative;
     display: inline-block;
+    text-decoration: none;
 }
 
 .ulmenu > li > a{
